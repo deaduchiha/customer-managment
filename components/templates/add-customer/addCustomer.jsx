@@ -31,7 +31,17 @@ const AddCustomer = () => {
     if (data.status === "success") router.push("/");
   };
   const cancelHandler = () => {
-    console.log("cancel");
+    setForm({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      address: "",
+      postalCode: "",
+      date: "",
+      products: [],
+    });
+    router.push("/");
   };
   return (
     <>
