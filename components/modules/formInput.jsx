@@ -11,9 +11,14 @@ const FormInput = ({ name, label, type, value, onChange }) => {
   return (
     <Stack>
       <InputGroup>
-        {/* eslint-disable-next-line react/no-children-prop */}
-        <InputLeftAddon children={label} />
-        <Input type={type} value={value} onChange={onChange} />
+        <label htmlFor={name}>{label}</label>
+        <Input
+          type={type}
+          id={name}
+          name={name}
+          value={value}
+          onChange={onChange}
+        />
       </InputGroup>
     </Stack>
   );
