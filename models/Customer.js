@@ -35,6 +35,7 @@ const customerSchema = new Schema({
   },
 });
 
+// this is customer
 const Customer = models.Customer || model("Customer", customerSchema);
 
 export default Customer;
