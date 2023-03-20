@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Button, Flex, Heading } from "@chakra-ui/react";
 
-import { Box, Button, Flex, Heading } from "@chakra-ui/react";
+// components
 import Form from "@/components/modules/form";
+import { useRouter } from "next/router";
 
 const AddCustomer = () => {
   const [form, setForm] = useState({
@@ -15,11 +17,21 @@ const AddCustomer = () => {
     products: [],
   });
 
+  const router = useRouter();
+
+  const saveHandler = async () => {
+    const res = await fetch("/api/customer", {
+      method: "POST",
+      body: JSON.stringify({ data: form }),
+      headers: { "Content-Type": "Application/json" },
+    });
+    const data = await res.json();
+    console.log(data);
+
+    if (data.status === "success") router.push("/");
+  };
   const cancelHandler = () => {
     console.log("cancel");
-  };
-  const saveHandler = () => {
-    console.log("save");
   };
   return (
     <>
