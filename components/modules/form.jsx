@@ -1,7 +1,8 @@
 import React from "react";
+import FormInput from "./formInput";
 
 const Form = () => {
-  return <h1>form</h1>;
+  return <FormInput />;
 };
 
 export default Form;
