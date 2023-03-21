@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Text } from "@chakra-ui/react";
 
 import FormInput from "./formInput";
 
@@ -15,12 +15,13 @@ const ItemList = ({ form, setForm }) => {
   };
 
   const changeHandler = () => {};
+  const deleteHandler = () => {};
 
   return (
-    <Box border="1px" borderRadius={5} my={3} p={2}>
+    <Box my={3} p={2} border="1px" borderRadius={5}>
       <Text mb={2}>Purchase products</Text>
       {products.map((product, index) => (
-        <Box key={index}>
+        <Box p={2} border="1px" borderRadius={5} my={5} key={index}>
           <FormInput
             name="name"
             label="product name"
@@ -28,6 +29,25 @@ const ItemList = ({ form, setForm }) => {
             value={product.name}
             onChange={changeHandler}
           />
+          <Flex justifyContent="space-between">
+            <FormInput
+              name="price"
+              label="Price"
+              type="text"
+              value={product.price}
+              onChange={changeHandler}
+            />
+            <FormInput
+              name="qty"
+              label="Qty"
+              type="text"
+              value={product.qty}
+              onChange={changeHandler}
+            />
+          </Flex>
+          <Button colorScheme="red" onClick={deleteHandler}>
+            remove
+          </Button>
         </Box>
       ))}
       <Button
