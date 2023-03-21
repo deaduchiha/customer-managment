@@ -9,11 +9,17 @@ const ItemList = ({ form, setForm }) => {
       ...form,
       products: [...products, { name: "", price: "", qty: "" }],
     });
+    console.log(products);
   };
   return (
-    <Box>
-      <Text>Purchase products</Text>
-      <Button colorScheme="green" onClick={addHandler}>
+    <Box border="1px" borderRadius={5} my={3} p={2}>
+      <Text mb={2}>Purchase products</Text>
+      <Button
+        w="full"
+        colorScheme="green"
+        variant="outline"
+        onClick={addHandler}
+      >
         Add Item
       </Button>
     </Box>
