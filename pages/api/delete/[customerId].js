@@ -16,7 +16,7 @@ const handler = async (req, res) => {
     try {
       await Customer.deleteOne({ _id: id });
       res.status(200).json({
-        status: "201",
+        status: "success",
         message: "Delete successfully",
       });
     } catch (err) {
