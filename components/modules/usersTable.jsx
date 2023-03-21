@@ -10,6 +10,7 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 const UsersTable = ({ customer }) => {
   return (
@@ -28,10 +29,20 @@ const UsersTable = ({ customer }) => {
             <Td>{customer.email}</Td>
             <Td isNumeric>
               <Flex justifyContent="flex-end" gap={2}>
-                <Button size="sm" colorScheme="teal">
+                <Button
+                  size="sm"
+                  colorScheme="teal"
+                  as={Link}
+                  href={`/customer/${customer._id}`}
+                >
                   Details
                 </Button>
-                <Button size="sm" colorScheme="green">
+                <Button
+                  size="sm"
+                  colorScheme="green"
+                  as={Link}
+                  href={`/edit/${customer._id}`}
+                >
                   Edit
                 </Button>
                 <Button size="sm" colorScheme="red">
