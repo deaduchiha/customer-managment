@@ -26,7 +26,7 @@ const Form = ({ form, setForm }) => {
           key={index}
           name={fieldName}
           label={fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}
-          type="text"
+          type={fieldName === "date" ? "date" : "text"}
           value={form[fieldName]}
           onChange={changeHandler}
         />

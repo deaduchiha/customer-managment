@@ -6,7 +6,12 @@ import Link from "next/link";
 const Layout = ({ children }) => {
   return (
     <Container maxW="container.lg">
-      <Flex py={2} alignItems="center" justifyContent="space-between">
+      <Flex
+        py={2}
+        alignItems="center"
+        justifyContent="space-between"
+        borderBottom="1px"
+      >
         <Heading as={Link} href="/" size="md">
           Customer Management
         </Heading>
