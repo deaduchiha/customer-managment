@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Button,
+  Flex,
   Table,
   TableContainer,
   Tbody,
@@ -11,30 +13,32 @@ import {
 
 const UsersTable = ({ customer }) => {
   return (
-    <TableContainer>
+    <TableContainer my={5}>
       <Table>
         <Thead>
           <Tr>
-            <Th>To convert</Th>
-            <Th>into</Th>
-            <Th isNumeric>multiply by</Th>
+            <Th>First Name</Th>
+            <Th>Last Name</Th>
+            <Th isNumeric>Buttons</Th>
           </Tr>
         </Thead>
         <Tbody>
           <Tr>
-            <Td>inches</Td>
-            <Td>millimetres (mm)</Td>
-            <Td isNumeric>25.4</Td>
-          </Tr>
-          <Tr>
-            <Td>feet</Td>
-            <Td>centimetres (cm)</Td>
-            <Td isNumeric>30.48</Td>
-          </Tr>
-          <Tr>
-            <Td>yards</Td>
-            <Td>metres (m)</Td>
-            <Td isNumeric>0.91444</Td>
+            <Td>{customer.firstName}</Td>
+            <Td>{customer.firstName}</Td>
+            <Td isNumeric>
+              <Flex justifyContent="flex-end" gap={2}>
+                <Button size="sm" colorScheme="teal">
+                  Details
+                </Button>
+                <Button size="sm" colorScheme="green">
+                  Edit
+                </Button>
+                <Button size="sm" colorScheme="red">
+                  Delete
+                </Button>
+              </Flex>
+            </Td>
           </Tr>
         </Tbody>
       </Table>
