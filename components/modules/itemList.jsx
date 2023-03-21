@@ -45,7 +45,7 @@ const ItemList = ({ form, setForm }) => {
               onChange={changeHandler}
             />
           </Flex>
-          <Button colorScheme="red" onClick={deleteHandler}>
+          <Button w="full" colorScheme="red" onClick={deleteHandler}>
             remove
           </Button>
         </Box>
