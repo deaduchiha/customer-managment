@@ -12,9 +12,14 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
-const handleDelete = () => {};
-
 const UsersTable = ({ customer }) => {
+  const handleDelete = async () => {
+    const res = await fetch(`/api/delete/${customer._id}`, {
+      method: "DELETE",
+    });
+    const data = await res.json();
+    console.log(data);
+  };
   return (
     <TableContainer my={5}>
       <Table>
