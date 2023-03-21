@@ -12,7 +12,7 @@ const Form = ({ form, setForm }) => {
   };
 
   return (
-    <Box>
+    <Box p={5}>
       {[
         "firstName",
         "lastName",

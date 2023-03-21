@@ -45,7 +45,7 @@ const AddCustomer = () => {
   };
   return (
     <>
-      <Heading as="h2" size="md">
+      <Heading as="h2" size="base" my={"25px"}>
         Add new customer
       </Heading>
       <Form form={form} setForm={setForm} />
