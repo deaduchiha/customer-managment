@@ -3,7 +3,7 @@ import React from "react";
 import connectDB from "@/utils/connectDB";
 import Customer from "@/models/Customer";
 
-import HomePage from "@/components/templates/home/home";
+import HomePage from "@/components/templates/home";
 
 const Home = ({ customers }) => {
   return <HomePage customers={customers} />;
