@@ -1,5 +1,7 @@
-import { Box, Button, Text } from "@chakra-ui/react";
 import React from "react";
+import { Box, Button, Text } from "@chakra-ui/react";
+
+import FormInput from "./formInput";
 
 const ItemList = ({ form, setForm }) => {
   const { products } = form;
@@ -11,9 +13,23 @@ const ItemList = ({ form, setForm }) => {
     });
     console.log(products);
   };
+
+  const changeHandler = () => {};
+
   return (
     <Box border="1px" borderRadius={5} my={3} p={2}>
       <Text mb={2}>Purchase products</Text>
+      {products.map((product, index) => (
+        <Box key={index}>
+          <FormInput
+            name="name"
+            label="product name"
+            type="text"
+            value={product.name}
+            onChange={changeHandler}
+          />
+        </Box>
+      ))}
       <Button
         w="full"
         colorScheme="green"
