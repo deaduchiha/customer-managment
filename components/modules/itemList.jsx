@@ -14,7 +14,14 @@ const ItemList = ({ form, setForm }) => {
     console.log(products);
   };
 
-  const changeHandler = () => {};
+  const changeHandler = (e, index) => {
+    const { name, value } = e.target;
+    const newProducts = [...products];
+    newProducts[index][name] = value;
+
+    setForm({ ...form, products: newProducts });
+  };
+
   const deleteHandler = () => {};
 
   return (
@@ -27,22 +34,23 @@ const ItemList = ({ form, setForm }) => {
             label="product name"
             type="text"
             value={product.name}
-            onChange={changeHandler}
+            onChange={(e) => changeHandler(e, index)}
           />
-          <Flex justifyContent="space-between">
+          <Flex w="" alignItems="center" gap={4}>
             <FormInput
               name="price"
               label="Price"
               type="text"
               value={product.price}
-              onChange={changeHandler}
+              onChange={(e) => changeHandler(e, index)}
             />
+
             <FormInput
               name="qty"
               label="Qty"
               type="text"
               value={product.qty}
-              onChange={changeHandler}
+              onChange={(e) => changeHandler(e, index)}
             />
           </Flex>
           <Button w="full" colorScheme="red" onClick={deleteHandler}>
