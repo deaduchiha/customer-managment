@@ -22,7 +22,12 @@ const ItemList = ({ form, setForm }) => {
     setForm({ ...form, products: newProducts });
   };
 
-  const deleteHandler = () => {};
+  const deleteHandler = (index) => {
+    const newProducts = [...products];
+    newProducts.splice(index, 1);
+
+    setForm({ ...form, products: newProducts });
+  };
 
   return (
     <Box my={3} p={2} border="1px" borderRadius={5}>
@@ -53,7 +58,11 @@ const ItemList = ({ form, setForm }) => {
               onChange={(e) => changeHandler(e, index)}
             />
           </Flex>
-          <Button w="full" colorScheme="red" onClick={deleteHandler}>
+          <Button
+            w="full"
+            colorScheme="red"
+            onClick={() => deleteHandler(index)}
+          >
             remove
           </Button>
         </Box>
