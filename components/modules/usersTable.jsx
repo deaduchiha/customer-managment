@@ -18,14 +18,14 @@ const UsersTable = ({ customer }) => {
         <Thead>
           <Tr>
             <Th>First Name</Th>
-            <Th>Last Name</Th>
+            <Th>Email</Th>
             <Th isNumeric>Buttons</Th>
           </Tr>
         </Thead>
         <Tbody>
           <Tr>
             <Td>{customer.firstName}</Td>
-            <Td>{customer.firstName}</Td>
+            <Td>{customer.email}</Td>
             <Td isNumeric>
               <Flex justifyContent="flex-end" gap={2}>
                 <Button size="sm" colorScheme="teal">
