@@ -12,6 +12,8 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
+const handleDelete = () => {};
+
 const UsersTable = ({ customer }) => {
   return (
     <TableContainer my={5}>
@@ -45,7 +47,7 @@ const UsersTable = ({ customer }) => {
                 >
                   Edit
                 </Button>
-                <Button size="sm" colorScheme="red">
+                <Button size="sm" colorScheme="red" onClick={handleDelete}>
                   Delete
                 </Button>
               </Flex>
