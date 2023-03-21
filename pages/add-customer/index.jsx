@@ -1,6 +1,6 @@
 import React from "react";
 
-import AddCustomer from "@/components/templates/add-customer/addCustomer";
+import AddCustomer from "@/components/templates/addCustomer";
 
 const Index = () => {
   return <AddCustomer />;

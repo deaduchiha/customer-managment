@@ -17,6 +17,8 @@ const handler = async (req, res) => {
     const id = req.query.customerId; //take id from query
     const data = req.body.data; //take data from body (front)
 
+    console.log(data);
+
     try {
       const customer = await Customer.findOne({ _id: id }); //find the one have same id as _id
       //   change all data
@@ -40,7 +42,7 @@ const handler = async (req, res) => {
       console.log(err);
       res.status(500).json({
         status: "failed",
-        message: "Error to updating data",
+        message: "Error retrieving data from DB ",
       });
     }
   }
