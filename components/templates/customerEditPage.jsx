@@ -2,28 +2,21 @@ import { Box, Button, Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Form from "../modules/form";
 import { useRouter } from "next/router";
+import moment from "moment/moment";
 
 const CustomerEditPage = ({ data, id }) => {
-  const {
-    firstName,
-    lastName,
-    email,
-    phone = "",
-    address = "",
-    postalCode = "",
-    products = "",
-    date = "",
-  } = data;
+  const date = data.date ? moment(data.date).utc().format("YYYY-MM-DD") : "";
+  const { firstName, lastName, email } = data;
 
   const [form, setForm] = useState({
     firstName,
     lastName,
     email,
-    phone,
-    address,
-    postalCode,
-    products,
-    date,
+    phone: data.phone || "",
+    address: data.address || "",
+    postalCode: data.postalCode || "",
+    products: data.products || "",
+    date: date || "",
   });
 
   const router = useRouter();
