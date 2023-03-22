@@ -1,8 +1,29 @@
-import React from "react";
+import { Box } from "@chakra-ui/react";
+import React, { useState } from "react";
 
 const CustomerEditPage = ({ data, id }) => {
-  console.log(data, id);
-  return <h1>customer edit page</h1>;
+  const {
+    firstName,
+    lastName,
+    email,
+    phone = "",
+    address = "",
+    postalCode = "",
+    products = "",
+    date = "",
+  } = data;
+
+  const [form, setForm] = useState({
+    firstName,
+    lastName,
+    email,
+    phone,
+    address,
+    postalCode,
+    products,
+    date,
+  });
+  return <Box>hello </Box>;
 };
 
 export default CustomerEditPage;
