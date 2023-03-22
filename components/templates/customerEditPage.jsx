@@ -32,7 +32,16 @@ const CustomerEditPage = ({ data, id }) => {
     router.push("/");
   };
 
-  const handleSave = () => {};
+  const handleSave = async () => {
+    const res = await fetch(`/api/edit/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ data: form }),
+      headers: { "Content-Type": "Application/json" },
+    });
+    const data = await res.json();
+
+    if (data.status === "success") router.push("/");
+  };
   return (
     <Box>
       <Form form={form} setForm={setForm} />
