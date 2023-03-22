@@ -27,7 +27,7 @@ const CustomerEditPage = ({ data, id }) => {
 
   const handleCancel = () => {};
 
-  const handleEdit = () => {};
+  const handleSave = () => {};
   return (
     <Box>
       <Form form={form} setForm={setForm} />
@@ -35,7 +35,7 @@ const CustomerEditPage = ({ data, id }) => {
         <Button colorScheme="red" onClick={handleCancel}>
           Cancel
         </Button>
-        <Button colorScheme="green" onClick={handleEdit}>
+        <Button colorScheme="green" onClick={handleSave}>
           Edit
         </Button>
       </Flex>
