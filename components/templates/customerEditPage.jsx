@@ -24,12 +24,20 @@ const CustomerEditPage = ({ data, id }) => {
     products,
     date,
   });
+
+  const handleCancel = () => {};
+
+  const handleEdit = () => {};
   return (
     <Box>
       <Form form={form} setForm={setForm} />
       <Flex justifyContent="space-between">
-        <Button colorScheme="red">Cancel</Button>
-        <Button colorScheme="green">Edit</Button>
+        <Button colorScheme="red" onClick={handleCancel}>
+          Cancel
+        </Button>
+        <Button colorScheme="green" onClick={handleEdit}>
+          Edit
+        </Button>
       </Flex>
     </Box>
   );
