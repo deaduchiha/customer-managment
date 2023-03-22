@@ -1,6 +1,7 @@
 import { Box, Button, Flex } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Form from "../modules/form";
+import { useRouter } from "next/router";
 
 const CustomerEditPage = ({ data, id }) => {
   const {
@@ -25,7 +26,11 @@ const CustomerEditPage = ({ data, id }) => {
     date,
   });
 
-  const handleCancel = () => {};
+  const router = useRouter();
+
+  const handleCancel = () => {
+    router.push("/");
+  };
 
   const handleSave = () => {};
   return (
