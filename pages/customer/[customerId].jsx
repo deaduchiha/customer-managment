@@ -14,9 +14,9 @@ const Index = () => {
     fetch(`/api/customer/${customerId}`)
       .then((res) => res.json())
       .then((data) => setData(data.data));
-  });
+  }, [customerId]);
 
-  if (data) return <CustomerDetails />;
+  if (data) return <CustomerDetails data={data} />;
 };
 
 export default Index;
